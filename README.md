@@ -6,12 +6,14 @@ gcloud config set project  <your>-dl
 gcloud services enable compute.googleapis.com
 gcloud iam service-accounts create gcp-terraform-dl --display-name gcp-terraform-dl
 gcloud projects add-iam-policy-binding  <your>-dl \
-            --member='serviceAccount:gcp-terraform-dl@<your>-dl.iam.gserviceaccount.com' --role='roles/owner'
+            --member='serviceAccount:gcp-terraform-dl@<your>-dl.iam.gserviceaccount.com' \
+            --role='roles/owner'
 
-gcloud iam service-accounts keys create 'credentials.json' --iam-account='gcp-terraform-dl@<your>-dl.iam.gserviceaccount.com'
+gcloud iam service-accounts keys create 'credentials.json' \
+            --iam-account='gcp-terraform-dl@<your>-dl.iam.gserviceaccount.com'
 ```
 
-Replace <your> with your desired project id.
+Replace <your>-dl with your desired project id.
 
 ## Request Quota
 
